@@ -1,0 +1,146 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #202d32;
+  font-family: Arial, sans-serif;
+  color: #613d4b;
+}
+
+.card {
+  width: min(100%, 680px);
+  padding: 35px 24px;
+  text-align: center;
+  border: 5px solid white;
+  border-radius: 12px;
+  background: linear-gradient(
+    145deg, #fffaf4, #ffe3df, #fff2e7
+  );
+  box-shadow: 0 20px 60px #0004;
+}
+
+.eyebrow {
+  color: #d66b89;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+h1 {
+  margin: 15px 0 10px;
+  font-size: clamp(30px, 7vw, 48px);
+  color: #d94c7c;
+}
+
+.subtitle {
+  color: #97717c;
+  line-height: 1.6;
+}
+
+.scene {
+  position: relative;
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.sparkles {
+  position: absolute;
+  top: 25px;
+  color: #e6b64e;
+  letter-spacing: 8px;
+  animation: twinkle 1.5s infinite alternate;
+}
+
+.heart {
+  border: 0;
+  background: transparent;
+  font-size: clamp(85px, 20vw, 135px);
+  cursor: pointer;
+  filter: drop-shadow(0 10px 20px #f05b8a66);
+  animation: heartbeat 1.2s infinite;
+  z-index: 2;
+}
+
+.heart:hover {
+  transform: scale(1.1);
+}
+
+.ground {
+  position: absolute;
+  bottom: 42px;
+  width: 55%;
+  height: 12px;
+  border-radius: 50%;
+  background: #d9a5a066;
+  filter: blur(8px);
+}
+
+.hint {
+  position: absolute;
+  bottom: 0;
+  font-size: 13px;
+  color: #aa7c8b;
+}
+
+.wish {
+  display: none;
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffffa8;
+  line-height: 1.8;
+  animation: appear 0.8s ease;
+}
+
+.wish.show {
+  display: block;
+}
+
+.wish h2 {
+  color: #d94c7c;
+}
+
+.signature {
+  color: #d94c7c;
+  font-weight: bold;
+}
+
+.replay {
+  margin-top: 20px;
+  padding: 13px 24px;
+  border: 0;
+  border-radius: 30px;
+  background: #d94c7c;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.replay:hover {
+  background: #b83262;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.13); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.09); }
+}
+
+@keyframes twinkle {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
